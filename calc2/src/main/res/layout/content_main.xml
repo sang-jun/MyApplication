@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="5"
+    android:columnCount="1"
     android:rowCount="9"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
@@ -14,88 +14,111 @@
         android:id="@+id/Edit1"
         android:layout_width="match_parent"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="0"
-        android:hint="@string/editText1_hint"
-        android:gravity="right" />
+        android:gravity="right"
+        android:hint="@string/editText1_hint" />
 
     <EditText
         android:id="@+id/Edit2"
         android:layout_width="match_parent"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="1"
-        android:hint="@string/editText2_hint"
-        android:gravity="right" />
+        android:gravity="right"
+        android:hint="@string/editText2_hint" />
 
-    <Button
-        android:id="@+id/BtnNum0"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_column="0"
         android:layout_row="2"
-        android:layout_rowSpan="1"
-        android:allowUndo="true"
-        android:text="@string/number0" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/BtnNum1"
-        android:layout_column="1"
-        android:layout_row="2"
-        android:text="@string/number1" />
+        <Button
+            android:id="@+id/BtnNum0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number0" />
 
-    <Button
-        android:id="@+id/BtnNum2"
-        android:layout_column="2"
-        android:layout_row="2"
-        android:text="@string/number2" />
+        <Button
+            android:id="@+id/BtnNum1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number1" />
 
-    <Button
-        android:id="@+id/BtnNum3"
-        android:layout_column="3"
-        android:layout_row="2"
-        android:text="@string/number3" />
+        <Button
+            android:id="@+id/BtnNum2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number2" />
 
-    <Button
-        android:id="@+id/BtnNum4"
-        android:layout_column="4"
-        android:layout_row="2"
-        android:text="@string/number4" />
+        <Button
+            android:id="@+id/BtnNum3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number3" />
 
-    <Button
-        android:id="@+id/BtnNum5"
+        <Button
+            android:id="@+id/BtnNum4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_column="0"
         android:layout_row="3"
-        android:text="@string/number5" />
+        >
 
-    <Button
-        android:id="@+id/BtnNum6"
-        android:layout_column="1"
-        android:layout_row="3"
-        android:text="@string/number6" />
+        <Button
+            android:id="@+id/BtnNum5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number5" />
 
-    <Button
-        android:id="@+id/BtnNum7"
-        android:layout_column="2"
-        android:layout_row="3"
-        android:text="@string/number7" />
+        <Button
+            android:id="@+id/BtnNum6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number6" />
 
-    <Button
-        android:id="@+id/BtnNum8"
-        android:layout_column="3"
-        android:layout_row="3"
-        android:text="@string/number8" />
+        <Button
+            android:id="@+id/BtnNum7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number7" />
 
-    <Button
-        android:id="@+id/BtnNum9"
-        android:layout_column="4"
-        android:layout_row="3"
-        android:text="@string/number9" />
+        <Button
+            android:id="@+id/BtnNum8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number8" />
+
+        <Button
+            android:id="@+id/BtnNum9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/number9" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="4"
         android:onClick="operClicked"
         android:text="@string/button1_text" />
@@ -105,7 +128,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="5"
         android:onClick="operClicked"
         android:text="@string/button2_text" />
@@ -115,7 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="6"
         android:onClick="operClicked"
         android:text="@string/button3_text" />
@@ -125,7 +148,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="7"
         android:onClick="operClicked"
         android:text="@string/button4_text" />
@@ -135,8 +158,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
-        android:layout_columnSpan="5"
+        android:layout_columnSpan="1"
         android:layout_row="8"
         android:text="@string/result"
-        android:textColor="@color/color_red" />
+        android:textColor="@color/color_red"
+        android:layout_rowSpan="1" />
 </GridLayout>
