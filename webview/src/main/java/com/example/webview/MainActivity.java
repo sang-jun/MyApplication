@@ -8,45 +8,68 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.example.hansung101_56.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
+    Button btn_go, btn_back;
+    EditText edit_url;
+    WebView webView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        btn_go = (Button) findViewById(R.id.btn_go);
+        btn_back = (Button) findViewById(R.id.btn_back);
+        webView = (WebView) findViewById(R.id.webView);
+        edit_url = (EditText) findViewById(R.id.edit_url);
+
+
+        webView.setWebViewClient(new CookWebViewClient());
+        WebSettings webSet = webView.getSettings();
+        webSet.setBuiltInZoomControls(true);
+
+        btn_go.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String url = edit_url.getText().toString();
+
+                if (!url.substring(0, 7).equals("http://") || !url.substring(0, 7).equals("HTTP://")) {
+                    url = "http://" + url;
+                    edit_url.setText(url);
+                }
+
+
+                webView.loadUrl(url);
             }
         });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                webView.goBack();
+            }
+        });
+
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    class CookWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            return false;
         }
 
-        return super.onOptionsItemSelected(item);
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+
+            edit_url.setText(url);
+        }
     }
+
 }
