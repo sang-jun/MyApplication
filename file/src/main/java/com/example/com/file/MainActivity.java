@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         int cMonth = cal.get(Calendar.MONTH);
         int cDay = cal.get(Calendar.DAY_OF_MONTH);
 
-        dp.init(cYear,cMonth,cDay,new DatePicker.OnDateChangedListener(){
+        dp.init(cYear, cMonth, cDay, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                fileName = Integer.toString(year) + "-" + Integer.toString(monthOfYear + 1) + "-" + Integer.toString(dayOfMonth) +".txt";
+                fileName = Integer.toString(year) + "-" + Integer.toString(monthOfYear + 1) + "-" + Integer.toString(dayOfMonth) + ".txt";
 
                 String str = readDiary(fileName);
                 edtDiary.setText(str);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //dp.updateDate(cYear,cMonth,cDay);
+
 
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+       dp.updateDate(cYear,cMonth,cDay);
     }
 
     String readDiary(String fName) {

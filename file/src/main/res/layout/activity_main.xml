@@ -8,21 +8,22 @@
 
     <DatePicker
         android:id="@+id/datePicker1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1000"></DatePicker>
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"></DatePicker>
     <EditText
         android:id="@+id/edtDiary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green"
         android:lines="8"
-        android:layout_weight="1"/>
+       />
     <Button
         android:id="@+id/btnWrite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
         android:text="@string/button"
-        android:layout_weight="1"/>
+        />
 </LinearLayout>
