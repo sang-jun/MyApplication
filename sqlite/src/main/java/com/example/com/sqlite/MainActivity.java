@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sqlDB = myHelper.getWritableDatabase();
-                sqlDB.execSQL("INSERT INTO groupTBL VALUES ('"+ edtName.getText().toString() + "' , "+ edtNumber.getText().toString() +");");
+                sqlDB.execSQL("INSERT INTO groupTBL VALUES ('" + edtName.getText().toString() + "' , " + edtNumber.getText().toString() + ");");
                 sqlDB.close();
+                btnSelect.callOnClick();
                 Toast.makeText(getApplicationContext(),"입력!",Toast.LENGTH_SHORT).show();
             }
         });
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 sqlDB = myHelper.getWritableDatabase();
                 sqlDB.execSQL("DELETE FROM groupTBL WHERE gName = '"+edtName.getText().toString()+"';");
                 sqlDB.close();
+                btnSelect.callOnClick();
                 Toast.makeText(getApplicationContext(),"삭제!",Toast.LENGTH_SHORT).show();
             }
         });
@@ -89,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 sqlDB = myHelper.getWritableDatabase();
                 sqlDB.execSQL("UPDATE groupTBL SET gNumber = '"+ edtNumber.getText().toString()+"' WHERE gName = '"+edtName.getText().toString()+"';");
                 sqlDB.close();
-                Toast.makeText(getApplicationContext(),"입력!",Toast.LENGTH_SHORT).show();
+                btnSelect.callOnClick();
+                Toast.makeText(getApplicationContext(),"수정!",Toast.LENGTH_SHORT).show();
             }
         });
 
