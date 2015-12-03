@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="C:\Program Files\Android\Android Studio1\gradle\gradle-2.4" />
+        <option name="gradleHome" value="C:\Program Files\Android\Android Studio\gradle\gradle-2.8" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -20,7 +20,6 @@
             <option value="$PROJECT_DIR$/file" />
             <option value="$PROJECT_DIR$/image" />
             <option value="$PROJECT_DIR$/intent" />
-            <option value="$PROJECT_DIR$/sqlite" />
             <option value="$PROJECT_DIR$/webview" />
           </set>
         </option>
